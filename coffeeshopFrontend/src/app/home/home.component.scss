@@ -1,0 +1,22 @@
+.container-center {
+  display: flex;
+  flex-direction: column;
+  margin-top: 350px;
+}
+
+.home-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.enter-button {
+  width: 20%;
+  font-weight: 600;
+}
+
+.btn-align {
+  text-align: center;
+}

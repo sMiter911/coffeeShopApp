@@ -1,0 +1,49 @@
+<div class="container tbl-center">
+  <div class="btn-add-client">
+    <button class="btn btn-primary" (click)="addClient()">Add Client</button>
+  </div>
+  <div *ngIf="redeemedClients.length == 0" class="no-data-text">
+    <h3>No Clients</h3>
+  </div>
+  <table
+    class="table table-dark table-hover"
+    *ngIf="redeemedClients.length > 0"
+  >
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Coffees Purchased</th>
+        <th>Points</th>
+        <th>Accumulated Cash</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of redeemedClients; let i = index">
+        <td>{{ client.firstName }}</td>
+        <td>{{ client.lastName }}</td>
+        <td>{{ client.purchasedCoffees }}</td>
+        <td>{{ client.points }}</td>
+        <td>R {{ client.cashAmount }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="viewClient(client.clientId)">
+            View
+          </button>
+          <button class="btn btn-warning" (click)="editClient(client.clientId)">
+            Edit
+          </button>
+          <button
+            class="btn btn-danger"
+            (click)="deleteClient(client.clientId)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="back-btn">
+    <button class="btn btn-primary" (click)="goToHome()">Back</button>
+  </div>
+</div>

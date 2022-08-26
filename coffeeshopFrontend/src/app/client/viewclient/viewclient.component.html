@@ -1,0 +1,20 @@
+<div class="center-card">
+  <div class="card" style="width: 18rem">
+    <div class="card-body">
+      <h5 class="card-title">Rewards Card</h5>
+      <div class="card-subtitle mb-2 text-muted">
+        {{ client.firstName }} {{ client.lastName }}
+      </div>
+      <p class="card-text">
+        Has approxiamately purchased {{ client.purchasedCoffees }} coffees.
+      </p>
+      <p class="card-text">
+        Has earned approxiamately {{ client.points }} points.
+      </p>
+      <p class="card-text">
+        Has earned approxiamately {{ client.cashAmount }} Rands.
+      </p>
+      <a class="btn btn-primary" (click)="goBack()">Back</a>
+    </div>
+  </div>
+</div>

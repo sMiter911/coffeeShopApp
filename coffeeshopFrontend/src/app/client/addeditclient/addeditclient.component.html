@@ -1,0 +1,69 @@
+<div class="container">
+  <form #clientForm="ngForm" class="row g-3">
+    <div class="col-md-6">
+      <label for="firstName" class="form-label">First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="First name"
+        aria-label="First name"
+        [(ngModel)]="client.firstName"
+        name="firstName"
+        #firstName="ngModel"
+        id="firstName"
+        required
+      />
+      <div
+        *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+        class="alert"
+      >
+        <div *ngIf="firstName.errors?.['required']">
+          First name is required.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="lastName" class="form-label">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Last name"
+        aria-label="Last name"
+        [(ngModel)]="client.lastName"
+        name="lastName"
+        #lastName="ngModel"
+        id="lastName"
+        required
+      />
+      <div
+        *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
+        class="alert"
+      >
+        <div *ngIf="lastName.errors?.['required']">Last name is required.</div>
+      </div>
+    </div>
+    <div class="col-4">
+      <label for="purchasedCoffees" class="form-label"
+        >Number of Coffees Purchased</label
+      >
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Number of Coffees"
+        [(ngModel)]="client.purchasedCoffees"
+        name="purchasedCoffees"
+        #purchasedCoffees="ngModel"
+        id="purchasedCoffees"
+        required
+      />
+    </div>
+    <div class="col-2 btn-align" (click)="onSubmit(clientForm)">
+      <button class="btn btn-success">
+        {{ isEdit ? "Edit Client" : "Add Client" }}
+      </button>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" (click)="return()">Back</button>
+    </div>
+  </form>
+</div>
