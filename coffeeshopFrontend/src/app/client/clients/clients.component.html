@@ -27,10 +27,16 @@
         <td>{{ client.points }}</td>
         <td>R {{ client.cashAmount }}</td>
         <td>
-          <button class="btn btn-primary" (click)="viewClient(client.clientId)">
+          <button
+            class="btn btn-primary btn-space"
+            (click)="viewClient(client.clientId)"
+          >
             View
           </button>
-          <button class="btn btn-warning" (click)="editClient(client.clientId)">
+          <button
+            class="btn btn-warning btn-space"
+            (click)="editClient(client.clientId)"
+          >
             Edit
           </button>
           <button
